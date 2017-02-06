@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 import os
 from _ast import In
 import flask_wtf
@@ -187,7 +189,11 @@ class ItemsRequiredExactly(InputRequired):
 class InventoryNetworkDevicesView (MyModelView):
     inline_models = (NetworkdeviceInlineModelForm(Networkdevice),)
     can_delete = False
-
+    form_widget_args = {
+        'networkdevice': {
+            'disabled': True
+        },
+    }
     #column_hide_backrefs = False
     #column_list = (Inventar.id,Inventar.inventarnr)
     #column_select_related_list = ()
@@ -340,4 +346,4 @@ def build_sample_db():
 if __name__ == '__main__':
     #build_sample_db()
     # Start app
-    app.run(debug=True)
+    app.run(debug=True,host='130.83.206.235')
