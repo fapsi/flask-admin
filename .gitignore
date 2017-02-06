@@ -20,6 +20,7 @@ examples/sqla-inline/static
 examples/file/files
 examples/forms/files
 examples/appengine/lib
+VKMLIZENZ/auth/config.py
 .DS_Store
 .idea/
 *.sqlite
